@@ -62,7 +62,7 @@ class VehiclesController < ApplicationController
   end
   
   def scrape
-    url = 'https://www.cars.com/shopping/suv/'
+    url = 'https://www.cars.com/shopping/sedan/'
     response = VehiclesSpider.process(url)
     if response[:status] == :completed && response[:error].nil?
       flash.now[:notice] = "Successfully scraped url"

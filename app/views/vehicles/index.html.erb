@@ -4,9 +4,10 @@
 
 <h1>Vehicles</h1>
 
-<table>
+<table class='table table-hover'>
   <thead>
     <tr>
+      <th>#</th>
       <th>Title</th>
       <th>Stock type</th>
       <th>Exterior color</th>
@@ -20,8 +21,9 @@
   </thead>
 
   <tbody>
-    <% @vehicles.each do |vehicle| %>
+    <% @vehicles.each_with_index do |vehicle, i| %>
       <tr>
+        <td><%= i+1 %></td>
         <td><%= vehicle.title %></td>
         <td><%= vehicle.stock_type %></td>
         <td><%= vehicle.exterior_color %></td>

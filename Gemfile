@@ -55,3 +55,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'kimurai'
+
+gem 'bootstrap'
+
+gem 'jquery-rails'
