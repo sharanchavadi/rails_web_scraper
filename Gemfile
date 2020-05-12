@@ -59,3 +59,5 @@ gem 'kimurai'
 gem 'bootstrap'
 
 gem 'jquery-rails'
+
+gem 'will_paginate'

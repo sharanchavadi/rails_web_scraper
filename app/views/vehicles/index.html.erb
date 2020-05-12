@@ -40,6 +40,9 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Vehicle', new_vehicle_path %>
+<div class="digg_pagination">
+  <div class="page_info">
+    <%= page_entries_info @vehicles %>
+  </div>
+  <%= will_paginate @vehicles, :container => false %>
+</div>
