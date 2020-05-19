@@ -1,10 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<%= button_to 'Scrape', scrape_vehicles_path %>
-
-<h1>Vehicles</h1>
-
-<table class='table table-hover'>
+<table>
   <thead>
     <tr>
       <th>#</th>
@@ -32,23 +26,7 @@
         <td><%= vehicle.drivetrain %></td>
         <td><%= vehicle.price %></td>
         <td><%= vehicle.miles %></td>
-        <td><%= link_to 'Show', vehicle %></td>
-        <td><%= link_to 'Edit', edit_vehicle_path(vehicle) %></td>
-        <td><%= link_to 'Destroy', vehicle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<div class='digg_pagination'>
-  <div class='page_info'>
-    <%= page_entries_info @vehicles %>
-  </div>
-  <%= will_paginate @vehicles, :container => false %>
-</div>
-
-<div class='text-center'>
-  Download file:
-  <%= link_to "CSV", vehicles_path(format: "csv") %> |
-  <%= link_to "PDF", vehicles_path(format: "pdf") %>
-</div>

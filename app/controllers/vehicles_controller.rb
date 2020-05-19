@@ -4,9 +4,17 @@ class VehiclesController < ApplicationController
   # GET /vehicles
   # GET /vehicles.json
   def index
-    @vehicles = Vehicle.paginate(page: params[:page], per_page: 5)
-  end
+    @vehicles = Vehicle.paginate(page: params[:page], per_page: 7)
 
+    respond_to do |format|
+      format.html
+      format.csv { send_data @vehicles.to_csv, filename: "vehicles-#{Date.today}.csv" }
+      format.pdf do
+         render pdf: 'vehicle_list'
+      end
+    end
+  end
+  
   # GET /vehicles/1
   # GET /vehicles/1.json
   def show
