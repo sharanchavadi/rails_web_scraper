@@ -1,0 +1,11 @@
+wb = xlsx_package.workbook
+
+wb.add_worksheet(name: "Vehicles") do |sheet|
+
+  sheet.add_row ["Title", "Stock Type", "Exterior Color", "Interior Color", "Transmission", "Drivetrain", "Price", "Miles"]
+
+  @vehicles.each do |vehicle|
+    sheet.add_row [vehicle.title, vehicle.stock_type, vehicle.exterior_color, vehicle.interior_color, vehicle.transmission, vehicle.drivetrain, vehicle.price, vehicle.miles, vehicle.created_at]
+  end
+
+end

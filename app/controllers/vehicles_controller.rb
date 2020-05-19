@@ -9,6 +9,7 @@ class VehiclesController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data @vehicles.to_csv, filename: "vehicles-#{Date.today}.csv" }
+      format.xlsx { response.headers['Content-Disposition'] = "attachment; filename='vehicles.xlsx'" }
       format.pdf do
          render pdf: 'vehicle_list'
       end
